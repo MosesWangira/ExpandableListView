@@ -1,5 +1,6 @@
 package com.example.expandablelistview
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.view.LayoutInflater
@@ -9,6 +10,8 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import java.util.*
 
+@Suppress("NAME_SHADOWING")
+@SuppressLint("InflateParams")
 class CustomExpandableListAdapter internal constructor(
     private val context: Context,
     private val titleList: List<String>,
@@ -56,6 +59,7 @@ class CustomExpandableListAdapter internal constructor(
     override fun getGroupId(listPosition: Int): Long {
         return listPosition.toLong()
     }
+
 
     override fun getGroupView(
         listPosition: Int,
